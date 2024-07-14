@@ -1,12 +1,21 @@
 "use strict";
 exports.__esModule = true;
-exports.vmap = function (f) { return function (ts) { return function (us) {
+exports.vproduct = exports.vsum = exports.vsquare = exports.vdiv = exports.vmul = exports.vsub = exports.vadd = exports.vmap = exports.v3zero = exports.v2zero = void 0;
+var v2zero = function () { return [0, 0]; };
+exports.v2zero = v2zero;
+var v3zero = function () { return [0, 0]; };
+exports.v3zero = v3zero;
+var vmap = function (f) { return function (ts) { return function (us) {
     return ts.map(function (t, d) { return f(t, us[d]); });
 }; }; };
-exports.vadd = exports.vmap(function (a, b) { return a + b; });
-exports.vsub = exports.vmap(function (a, b) { return a - b; });
-exports.vmul = exports.vmap(function (a, b) { return a * b; });
-exports.vdiv = exports.vmap(function (a, b) { return a / b; });
-exports.vsquare = function (v) { return v.map(function (x) { return x * x; }); };
-exports.vsum = function (v) { return v.reduce(function (sum, x) { return x + sum; }, 0); };
-exports.vproduct = function (v) { return v.reduce(function (product, x) { return x * product; }, 1); };
+exports.vmap = vmap;
+exports.vadd = (0, exports.vmap)(function (a, b) { return a + b; });
+exports.vsub = (0, exports.vmap)(function (a, b) { return a - b; });
+exports.vmul = (0, exports.vmap)(function (a, b) { return a * b; });
+exports.vdiv = (0, exports.vmap)(function (a, b) { return a / b; });
+var vsquare = function (v) { return v.map(function (x) { return x * x; }); };
+exports.vsquare = vsquare;
+var vsum = function (v) { return v.reduce(function (sum, x) { return x + sum; }, 0); };
+exports.vsum = vsum;
+var vproduct = function (v) { return v.reduce(function (product, x) { return x * product; }, 1); };
+exports.vproduct = vproduct;

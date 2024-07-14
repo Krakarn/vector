@@ -1,5 +1,8 @@
 export type Vector<T> = T[];
 
+export const v2zero = (): Vector<number> => [0, 0];
+export const v3zero = (): Vector<number> => [0, 0];
+
 export const vmap = <T, U, V>(
   f: (t: T, u: U) => V,
 ) => (
