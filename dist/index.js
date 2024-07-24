@@ -3,7 +3,7 @@ exports.__esModule = true;
 exports.vproduct = exports.vsum = exports.vsquare = exports.vdiv = exports.vmul = exports.vsub = exports.vadd = exports.vmap = exports.v3zero = exports.v2zero = void 0;
 var v2zero = function () { return [0, 0]; };
 exports.v2zero = v2zero;
-var v3zero = function () { return [0, 0]; };
+var v3zero = function () { return [0, 0, 0]; };
 exports.v3zero = v3zero;
 var vmap = function (f) { return function (ts) { return function (us) {
     return ts.map(function (t, d) { return f(t, us[d]); });
